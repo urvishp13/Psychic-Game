@@ -22,7 +22,7 @@ while (numberOfGuesses > 0) {
     // If letter guessed is incorrect
     else {
         // Add letter guessed to letter-guessed-area
-        lettersGuessedArea.textContent += letterGuessed;
+        lettersGuessedArea.innerHTML += letterGuessed + ", ";
         // Decrement guesses avaiable by 1
         numberOfGuesses--
         // Update guesses left in DOM
