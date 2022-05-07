@@ -31,6 +31,11 @@ document.addEventListener('keydown', (event) => {
     // If letter guessed is incorrect
     else {
         if (isNaN(letterGuessed) && letterGuessed.toLowerCase() === letterGuessed) { // make sure only lowercase letter keys are pressed
+            // If a repeat letter is guessed
+            if (lettersGuessedArea.textContent.includes(letterGuessed)) {
+                alert(`"${letterGuessed}" was guessed already. Choose a different letter. (Guesses was not derecemented by 1.)`);
+                return;
+            }
             // Add letter guessed to letter-guessed-area
             lettersGuessedArea.textContent += `${letterGuessed}, `;
             // Decrement guesses avaiable by 1
